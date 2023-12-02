@@ -7,6 +7,7 @@ export interface IBook extends Document {
   availabilityStatus: boolean;
   genre: string;
   description: string;
+  numberOfCopies: number;
 }
 
 const bookSchema: Schema = new Schema({
@@ -15,7 +16,8 @@ const bookSchema: Schema = new Schema({
   publicationYear: Number,
   availabilityStatus: { type: Boolean, default: true },
   genre: String,
-  description: String
+  description: String,
+  numberOfCopies: { type: Number, required: true, min: 1, default: 1 },
 });
 
 export default mongoose.model<IBook>('Book', bookSchema);

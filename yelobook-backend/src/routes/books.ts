@@ -1,10 +1,9 @@
-import express, { Request, Response } from 'express';
-import Book from '../models/book';
-import Reservation from '../models/reservation';
+import express from 'express';
+import * as bookController from '../controllers/bookController';
+import authenticate from '../middleware/authenticateMiddleware';
 
 const router = express.Router();
 
-router.get('/', async (req: Request, res: Response) => { /*... Book listing with search and filter ...*/ });
-router.post('/reserve/:bookId', async (req: Request, res: Response) => { /*... Reserve book logic ...*/ });
+router.get('/',authenticate,bookController.getAllBooks);
 
 export default router;
