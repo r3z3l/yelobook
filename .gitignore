@@ -1,2 +1,14 @@
 yelobook-backend/node_modules 
 yelobook-backend/.env
+yelobook-frontend/node_modules
+
+# Logs
+yelobook-frontend/logs
+yelobook-frontend/*.log
+yelobook-frontend/npm-debug.log*
+
+node_modules
+yelobook-frontend/dist
+yelobook-frontend/dist-ssr
+yelobook-frontend/*.local
+
